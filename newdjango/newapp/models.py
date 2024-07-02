@@ -168,3 +168,35 @@ class TempJobSeekerProfile(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class JobSeeker(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    is_approved = models.BooleanField(default=False)  # Indicates if the registration request is approved
+
+    def __str__(self):
+        return self.name
+
+class Employer(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    is_approved = models.BooleanField(default=False)  # Indicates if the registration request is approved
+
+    def __str__(self):
+        return self.name
+
+class TempEmployerProfile(models.Model):
+    name = models.CharField(_('name'), max_length=255)
+    dob = models.DateField(_('date of birth'))
+    username = models.CharField(_('username'), max_length=50, blank=True, null=True)
+    profile_picture = models.ImageField(_('profile picture'), upload_to='temp_employer_profile_pictures/', blank=True, null=True)
+    educational_info = models.TextField(_('educational information'), blank=True, null=True)
+    address = models.TextField(_('address'), blank=True, null=True)
+    email = models.EmailField(_('email'), unique=True)
+    password = models.CharField(_('password'), max_length=128)
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_approved = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name

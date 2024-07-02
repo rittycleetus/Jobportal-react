@@ -1,12 +1,24 @@
+
+
 from rest_framework import serializers
-from .models import TempJobSeekerProfile, Notification
+from .models import JobSeeker, TempJobSeekerProfile,TempEmployerProfile,Employer
+
+class JobSeekerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = JobSeeker
+        fields = '__all__'
 
 class TempJobSeekerProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = TempJobSeekerProfile
         fields = '__all__'
 
-class NotificationSerializer(serializers.ModelSerializer):
+class TempEmployerProfileSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Notification
+        model = TempEmployerProfile
+        fields = '__all__'
+
+class EmployerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Employer
         fields = '__all__'
