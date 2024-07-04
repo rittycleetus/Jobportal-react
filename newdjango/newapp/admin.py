@@ -1,7 +1,7 @@
 
 
 from django.contrib import admin
-from .models import JobSeekerProfile, CustomUser, EmployerProfile, TempJobSeekerProfile, JobSeeker,Employer,TempEmployerProfile
+from .models import JobSeekerProfile, CustomUser, EmployerProfile, TempJobSeekerProfile, JobSeeker,TempEmployerProfile,Employer1
 
 admin.site.register(JobSeekerProfile)
 admin.site.register(EmployerProfile)
@@ -17,5 +17,7 @@ class CustomUserAdmin(admin.ModelAdmin):
     )
 
 admin.site.register(JobSeeker)
+admin.site.register(TempJobSeekerProfile)
 
-admin.site.register(Employer)
+admin.site.register(Employer1)
+admin.site.register(TempEmployerProfile)

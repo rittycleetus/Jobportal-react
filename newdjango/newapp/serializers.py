@@ -1,7 +1,7 @@
 
 
 from rest_framework import serializers
-from .models import JobSeeker, TempJobSeekerProfile,TempEmployerProfile,Employer
+from .models import JobSeeker, TempJobSeekerProfile,TempEmployerProfile,Employer1
 
 class JobSeekerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,5 +20,5 @@ class TempEmployerProfileSerializer(serializers.ModelSerializer):
 
 class EmployerSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Employer
+        model = Employer1
         fields = '__all__'
